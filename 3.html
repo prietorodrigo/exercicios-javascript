@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<style type="text/css">
+			body{margin:0; background-color:#D90000; color:#FFFFFF; font-size:16px;}
+			#fonte{text-align:right;}
+			#cor{text-align:right;}
+			#tudo{margin:0 auto; width:800px;}
+			#menu{width:200px; float:left;}
+			#centro{width:600px; float:right;}
+			h1{text-align:center;color:#FFC200}
+			span{cursor:pointer;}
+		</style>
+
+	
+	</head>
+	<body>
+		<div id="tudo">
+			<div id="fonte">Fonte: <span id="aumentarFonte">A+</span> <span id="normalFonte">A</span> <span id="diminuirFonte">A-</span></div>
+			<div id="cor">Alto Contraste: <span id="altoContrasteOn">On</span> <span id="altoContrasteOff">Off</span></div>
+			<h1>ClicFronteira</h1>
+			<div id="menu">
+				<span>Inicio<span><br>
+				<span id="noticias">Noticias</span><br>
+				<div id="not">
+				Hoje<br>
+				Esse mês<br>
+				Procurar<br>
+				</div>
+				<span id="parceiros">Parceiros</span><br>
+				<div id="par">
+				Ferragem Nochi<br>
+				Supermercado Righ<br>
+				Allianz Seguros<br>
+				</div>
+			</div>
+			<div id="centro">
+				<h2>Show do SPC agita a cidade</h2>
+				<img src="spc.jpg" width="400">
+				<p>Show ocorreu no último sábado movimentou a fronteira</p>
+				<a href="#" style="color:white;" id="link">Veja mais</a>
+			</div>
+		</div>
+		<script>
+			document.querySelector("#not").style.display = "none";
+			document.querySelector("#par").style.display = "none";;
+
+			const mostrarNot = document.querySelector("#noticias");
+			const mostrarPar = document.querySelector("#parceiros");
+			const aumentaFonte = document.querySelector('#aumentarFonte');
+			const restauraFonte = document.querySelector('#normalFonte');
+			const diminuiFonte = document.querySelector('#diminuirFonte');
+			const contrasteOn = document.querySelector('#altoContrasteOn');
+			const contrasteOff = document.querySelector('#altoContrasteOff');
+			const tiraSublinhado = document.querySelector('#link');
+			const colocaSublinhado = document.querySelector('#link');
+
+			mostrarNot.addEventListener('click', mostrarNoticias);
+			mostrarPar.addEventListener('click', mostrarParceiros);
+			aumentaFonte.addEventListener('click', aumentarFonte);
+			restauraFonte.addEventListener('click', restaurarFonte);
+			diminuiFonte.addEventListener('click', diminuirFonte);
+			contrasteOn.addEventListener('click', altoContrasteOn);
+			contrasteOff.addEventListener('click', altoContrasteOff);
+			tiraSublinhado.addEventListener('mouseover', tirarSublinhado);
+			colocaSublinhado.addEventListener('mouseout', colocarSublinhado);
+
+			function mostrarNoticias(){
+				if(document.querySelector("#not").style.display == "none") {
+					document.querySelector("#not").style.display = "block";
+				}
+				else {
+					document.querySelector("#not").style.display = "none";
+				}
+			}
+
+			function mostrarParceiros(){
+				if(document.querySelector("#par").style.display == "none") {
+					document.querySelector("#par").style.display = "block";
+				}
+				else {
+					document.querySelector("#par").style.display = "none";
+				}
+			}
+
+			function aumentarFonte(){
+				document.querySelector("body").style.fontSize = "20px";
+			}
+
+			function restaurarFonte(){
+				document.querySelector("body").style.fontSize = "16px";
+			}
+
+			function diminuirFonte(){
+				document.querySelector("body").style.fontSize = "14px";
+			}
+
+			function altoContrasteOn(){
+				document.querySelector("body").style.backgroundColor = "black";
+				document.querySelector("body").style.color = "orange";
+				document.querySelector("a").style.color = "orange";
+			}
+
+			function altoContrasteOff(){
+				document.querySelector("body").style.backgroundColor = "#D90000";
+				document.querySelector("body").style.color = "#FFFFFF";
+				document.querySelector("a").style.color = "#FFFFFF";
+			}
+
+			function tirarSublinhado(){
+				document.querySelector("a").style.textDecoration = "none";
+			}
+
+			function colocarSublinhado(){
+				document.querySelector("a").style.textDecoration = "underline";
+			}
+		</script>
+	</body>
+</html>

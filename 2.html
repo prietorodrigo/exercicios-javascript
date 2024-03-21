@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body align="center">
+		<h1>Treinador de Futebol</h1>
+		Jogador:<input type="text" id="texto"/>
+		<br />
+		<br />
+		<button id="goleiro">Goleiro</button>
+		<button id="fixo">Fixo</button>
+		<button id="alaEsquerda">Ala Esquerda</button>
+		<button id="alaDireita">Ala Direta</button>
+		<button id="pivo">Pivô</button>
+		
+		<table border="1" style="width:800px; background-color:lightgreen; height:400px; text-align:center" align="center">
+			<thead>
+				<th colspan="4">Seleção</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td colspan="4" id="tdGoleiro">Goleiro</td>
+				</tr>
+				<tr>
+					<td id="tdAlaEsquerda">Ala Esquerda</td>
+					<td id="tdFixo">Fixo</td>
+				</tr>
+				<tr>
+					<td id="tdPivo">Pivô</td>
+					<td id="tdAlaDireita">Ala Direita</td>
+				</tr>
+			</tbody>
+		</table>
+		Regras: Pegar o nome informado pelo usuário no input Jogador e posiciná-lo na posição indicada pelo botão.
+		<script>
+			const botaoGoleiro = document.querySelector('#goleiro');
+			const paragrafoGoleiro = document.querySelector("#tdGoleiro");
+			const botaoAlaEsquerda = document.querySelector('#alaEsquerda');
+			const paragrafoAlaEsquerda = document.querySelector("#tdAlaEsquerda");
+			const botaoFixo = document.querySelector('#fixo');
+			const paragrafoFixo = document.querySelector("#tdFixo");
+			const botaoPivo = document.querySelector('#pivo');
+			const paragrafoPivo = document.querySelector("#tdPivo");
+			const botaoAlaDireita = document.querySelector('#alaDireita');
+			const paragrafoAlaDireita = document.querySelector("#tdAlaDireita");
+
+			botaoGoleiro.addEventListener('click', posicionaGoleiro);
+			botaoAlaEsquerda.addEventListener('click', posicionaAlaEsquerda);
+			botaoFixo.addEventListener('click', posicionaFixo);
+			botaoPivo.addEventListener('click', posicionaPivo);
+			botaoAlaDireita.addEventListener('click', posicionaAlaDireita);
+
+			function posicionaGoleiro() {
+				let jogador = document.querySelector("#texto").value;
+				paragrafoGoleiro.innerHTML = jogador;
+				document.querySelector("#texto").value = "";
+			}
+
+			function posicionaAlaEsquerda() {
+				let jogador = document.querySelector("#texto").value;
+				paragrafoAlaEsquerda.innerHTML = jogador;
+				document.querySelector("#texto").value = "";
+			}
+
+			function posicionaFixo() {
+				let jogador = document.querySelector("#texto").value;
+				paragrafoFixo.innerHTML = jogador;
+				document.querySelector("#texto").value = "";
+			}
+
+			function posicionaPivo() {
+				let jogador = document.querySelector("#texto").value;
+				paragrafoPivo.innerHTML = jogador;
+				document.querySelector("#texto").value = "";
+			}
+
+			function posicionaAlaDireita() {
+				let jogador = document.querySelector("#texto").value;
+				paragrafoAlaDireita.innerHTML = jogador;
+				document.querySelector("#texto").value = "";
+			}
+		</script>
+	</body>
+</html>
